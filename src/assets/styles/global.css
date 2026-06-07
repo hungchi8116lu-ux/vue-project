@@ -1,0 +1,36 @@
+/* 全局設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, "微軟正黑體", sans-serif;
+}
+
+:root {
+    --shopee-orange: #ee4d2d;
+    --shopee-orange-hover: #f05d40;
+    --text-dark: #222;
+    --text-light: #757575;
+    --border-color: #e8e8e8;
+    --bg-light: #f5f5f5;
+}
+
+body {
+    background-color: #fff;
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--shopee-orange);
+}
+
+ul {
+    list-style: none;
+}
+
+/* 容器共用 */
+.container {
+    width: 1040px;
+    margin: 0 auto;
+}

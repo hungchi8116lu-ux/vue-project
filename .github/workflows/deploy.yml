@@ -28,7 +28,8 @@ jobs:
         run: npm run build
 
       - name: Upload artifact for deployment
-        uses: actions/upload-pages-artifact@v1
+        # Updated from v1 to v3 to resolve the artifact deprecation error
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
@@ -38,7 +39,14 @@ jobs:
     permissions:
       pages: write
       id-token: write
+      
+    # Adding the environment maps the step output to the GitHub Pages UI
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        id: deployment
+        # Updated from v1 to v4
+        uses: actions/deploy-pages@v4
